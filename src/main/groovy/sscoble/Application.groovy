@@ -11,6 +11,10 @@ class Application {
         SpringApplication.run(Application.class, args)
     }
 
+    /**
+     * Used with marshallers
+     * @return
+     */
     @Bean
     JsonSlurper jsonSlurper() {
         new JsonSlurper()
