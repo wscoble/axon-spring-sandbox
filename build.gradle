@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE")
+    }
+}
+
+plugins {
+    id 'net.saliman.cobertura' version '2.2.7'
+}
+
+apply plugin: 'spring-boot'
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
+    compile "org.codehaus.groovy:groovy-all:2.4.3"
+    compile "org.axonframework:axon-core:2.4"
+    compile "org.slf4j:slf4j-api:1.7.12"
+    compile 'org.apache.camel:camel-core:2.15.2'
+    compile 'org.apache.camel:camel-spring:2.15.2'
+    compile 'org.apache.camel:camel-spring-javaconfig:2.15.2'
+
+    testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
+//    testCompile "org.spockframework:spock-spring:1.0-groovy-2.4"
+    testCompile "org.axonframework:axon-test:2.4"
+    testCompile 'org.apache.camel:camel-test:2.15.2'
+    testCompile 'org.apache.camel:camel-test-spring:2.15.2'
+}
+
+cobertura {
+    coverageIgnoreTrivial = true
+}
