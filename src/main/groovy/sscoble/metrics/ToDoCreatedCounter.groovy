@@ -17,6 +17,6 @@ class ToDoCreatedCounter {
 
     @EventHandler
     def on(ToDoItemCreatedEvent event) {
-        this.counterService.increment("ToDoItemCreated")
+        this.counterService.increment("event.ToDoItemCreated")
     }
 }

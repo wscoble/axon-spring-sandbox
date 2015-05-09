@@ -16,6 +16,6 @@ class ToDoCompletedCounter {
 
     @EventHandler
     def on(ToDoItemCompletedEvent event) {
-        this.counterService.increment("ToDoItemCompleted")
+        this.counterService.increment("event.ToDoItemCompleted")
     }
 }
